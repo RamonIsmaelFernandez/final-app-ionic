@@ -1,0 +1,8 @@
+{
+  "name": "final-app",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

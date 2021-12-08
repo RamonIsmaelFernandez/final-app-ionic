@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only" ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/login"><b>Acceso a tu cuenta</b></ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <div id="header">
+    <h1 style="text-align: center;">Registrate</h1>
+  </div>
+  <form [formGroup]='formularioRegistro' (keyup.enter)="guardar()" id="form">
+    <ion-item class="icon-margin-bottom">
+      <ion-label position="floating">Usuario</ion-label>
+          <ion-input formControlName="usuario"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item class="icon-margin-bottom">
+      <ion-label position="floating">Password</ion-label>
+      <ion-input formControlName="password" type="password" ></ion-input>
+    </ion-item>
+    <br>
+      <ion-button (click)="guardar()"  expand="block" shape="round">Registrarse</ion-button>
+      <ion-button [routerLink]="['/login']" color="success" expand="block" shape="round">Ya tienes una cuenta?</ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/inicio"></ion-back-button>
+    </ion-buttons>
+    <ion-title slot="start">Crear Teoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-md="4" offset-md="4">
+        <ion-card>
+          <ion-card-header>
+            <ion-title class="titulo">Crear Teoria</ion-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-item>
+              <ion-label class="titulo" position="floating">Titulo</ion-label>
+              <ion-input [(ngModel)]="teoriaCrear.titulo" ></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label class="titulo"  position="floating">Descripcion</ion-label>
+              <ion-textarea [(ngModel)]="teoriaCrear.descripcion"class="titulo"></ion-textarea>
+            </ion-item>
+            <ion-item>
+              <ion-label class="titulo"position="floating">Url Imagen</ion-label>
+              <ion-input [(ngModel)]="teoriaCrear.imagen"></ion-input>
+            </ion-item>
+            <ion-button class="titulo"color="primary" (click)="guardarTeoriaCreada()" routerlink="/inicio" expand="full" shape="round">Guardar
+            </ion-button>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

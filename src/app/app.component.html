@@ -1,0 +1,64 @@
+<ion-app>
+  <ion-menu menuId="main-menu" contentId="main">
+    <ion-content>
+      <div class="menu-header-bg"></div>
+      <div class="header-content">
+        <img src="../assets/logoEncabezado.png" alt="">
+        <ion-label>
+          <h2>Ismael Fernandez</h2>
+        </ion-label>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <ion-list class="menu-items" lines="none">
+      <ion-item class="active">
+        <ion-icon name="albums-outline"></ion-icon> Galeria De Imagenes
+      </ion-item>
+      <div class="action-button">
+        <ion-button routerLink="/galeria-imagenes">
+          <ion-icon slot="start" name="add"></ion-icon>Imagenes
+        </ion-button>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <ion-item class="active">
+        <ion-icon name="browsers-outline"></ion-icon> Teoria
+      </ion-item>
+
+      <div class="action-button">
+        <ion-button routerLink="/definicion">
+          <ion-icon slot="start" name="add"></ion-icon>Agregar Teoria
+        </ion-button>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <ion-item class="active">
+        <ion-icon class="colorIcon1" name="camera-outline"></ion-icon> Acceder a la camara
+      </ion-item>
+      <img [src]="image" *ngIf="image" />
+      <div class="action-button">
+        <ion-button (click)="sacarCamara()">
+          <ion-icon slot="start" name="add"></ion-icon> Camara
+        </ion-button>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      <ion-item class="active">
+        <ion-icon class="colorIcon" name="flash"></ion-icon> Acceder a la Galeria de Fotos
+      </ion-item>
+      <div class="action-button">
+        <ion-button (click)="tomarDeGaleria()">
+          <ion-icon slot="start" name="add"></ion-icon> Galeria
+        </ion-button>
+      </div>
+      <!---------------------------------------------------------------------------------------->
+      
+        <ion-item class="active">
+          <ion-icon name="navigate-outline"></ion-icon> Geolocalizacion
+        </ion-item>
+        <div class="action-button">
+          <ion-button routerLink="/geolocalizacion">
+            <ion-icon slot="start"name="add"></ion-icon> Acceder a tu Ubicacion
+          </ion-button>
+        </div>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

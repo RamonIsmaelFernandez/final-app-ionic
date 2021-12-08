@@ -1,0 +1,76 @@
+<ion-header >
+  <ion-toolbar>
+    <ion-title  class="titulo">Definiciones SAE-SH</ion-title>
+   <!-- <ion-buttons slot="end">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+    -->
+   <br>
+      <ion-menu-button slot="start" menu="main-menu"></ion-menu-button>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content >
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="chevron-down-circle-outline"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Actualizando...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item>
+      <ion-icon color="white" slot="start" name="moon"></ion-icon>
+      <ion-label class="titulo">Modo Oscuro</ion-label>
+      <ion-toggle slot="end" [ngModel]="darkMode" (ionChange)="cambio()"></ion-toggle>
+    </ion-item>    
+    
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col *ngFor="let teoria of listaTeorias; index as i" size="12" size-md="4">
+        <ion-col>
+          <ion-card class="diseño">
+            <ion-card-header style="text-align:center">
+              <div class="titulo">
+               {{teoria.titulo}}
+              </div>
+              <div class="titulo" *ngIf="listaTeorias[i].estadoModificacion==true">
+                <ion-input [(ngModel)]="listaTeorias[i].titulo" value="{{listaTeorias[i].titulo}}" style="border: 2px solid black"> </ion-input>
+              </div>
+            </ion-card-header>
+            <div style="text-align:center" *ngIf="listaTeorias[i].estadoModificacion==false || listaTeorias[i].estadoModificacion==null">
+              <img src="{{teoria.imagen}}" alt="">
+            </div>
+            <div style="text-align:center" *ngIf="listaTeorias[i].estadoModificacion==true">
+              <ion-label class="titulo">Url Imagen </ion-label>
+              <ion-input [(ngModel)]="teoria.imagen" value="{{listaTeorias[i].imagen}}" style="border: 2px solid black">
+              </ion-input>
+            </div>
+            <ion-card-content>
+              <div class="titulo"
+                *ngIf="listaTeorias[i].estadoModificacion==false || listaTeorias[i].estadoModificacion==null">
+                {{teoria.descripcion}}
+              </div>
+              <div *ngIf="listaTeorias[i].estadoModificacion==true">
+                <ion-textarea [(ngModel)]="teoria.descripcion" value="{{listaTeorias[i].descripcion}}" class="titulo" autoGrow="true"></ion-textarea>
+              </div>
+              <div style="text-align:center;">
+                <ion-button color="sucess"
+                  *ngIf="listaTeorias[i].estadoModificacion==false || listaTeorias[i].estadoModificacion==null"
+                  color="secondary" shape="round" (click)="editarTeoria(listaTeorias[i])">Editar
+                </ion-button>
+                <ion-button color="primary" *ngIf="listaTeorias[i].estadoModificacion==true" color="secondary"
+                  shape="round" (click)="editarGuardarTeoria(listaTeorias[i])">Guardar
+                </ion-button>
+                <ion-button color="danger" shape="round" (click)="EliminarTeoria(listaTeorias[i])">Eliminar
+                </ion-button>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

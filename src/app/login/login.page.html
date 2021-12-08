@@ -1,0 +1,32 @@
+<ion-header class="ion-no-border fondo">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button color="primary">
+        <ion-icon slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-icon color ="lihtg" slot="start" name="person-add"></ion-icon>
+      <ion-button [routerLink]="['/registro']">Registrarse</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content  style="--background: orange;">
+  <div id="header">
+    <h1 style="text-align: center;">Login</h1>
+    <img class="alinearFoto" src="assets/logoEncabezado.png">
+  </div>
+  <form [formGroup]='formulariologin' id="form"> 
+    <ion-item class="icon-margin-bottom">   
+      <ion-label position="floating">Usuario</ion-label>
+      <ion-input autocomplete="off" type="text" formControlName="usuario"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item class="icon-margin-bottom">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input autocomplete="off" type="password" formControlName="password" type="password"></ion-input>
+    </ion-item>
+    <br>
+      <ion-button (click)="ingresar()" expand="block" shape="round">Ingresar</ion-button>
+  </form>
+</ion-content>
