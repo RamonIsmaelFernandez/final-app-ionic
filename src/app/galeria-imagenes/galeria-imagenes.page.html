@@ -18,4 +18,41 @@
       </div>
     </ion-slide>
   </ion-slides>
+
+  <ion-card-content>
+    <ion-card-title style="text-align:center;background-color:rgb(241, 237, 237); font-weight: bold; border-radius: 10px;" >Url en Navegador  de la Aplicacion!!!</ion-card-title>
+   </ion-card-content>
+
+  <div class="ion-padding">
+    <ion-card *ngFor="let noticia of noticias">
+      <ion-card-title>{{noticia.titulo}}</ion-card-title>
+      <img src="{{noticia.img}}" alt="">
+      <ion-card-content>{{noticia.descripcion}}</ion-card-content>
+      <p style="text-align:center; color:rgb(13, 13, 179)" (click)="openUrl(noticia.url, '_system')">Leer más...</p>
+    </ion-card>
+
+   <ion-card-content>
+    <ion-card-title style="text-align:center;background-color:rgb(241, 237, 237); font-weight: bold; border-radius: 10px;" >Url en Navegador externo!!!</ion-card-title>
+   </ion-card-content>
+   
+    <ion-card>
+      <ion-card-title>8 Razas de perros que parecen ovejas</ion-card-title>
+      <img src="https://t1.ea.ltmcdn.com/es/images/0/7/7/8_razas_de_perros_que_parecen_ovejas_25770_600.jpg" alt="">
+      <ion-card-content>¿Sabías que no todas las ovejas tienen el pelaje blanco? Algunas, como la oveja romanov,
+        tienen el pelo en tonalidades negras y grises, otras, como la awassi, muestran tonos blancos mezclados con
+        marrón y otras son totalmente negras. Por ello, en la lista de razas de perros que parecen ovejas encontrarás
+        canes una característica común, el manto rizado y esponjoso, pero de colores muy variados, de acuerdo a las
+        diferentes razas de ovejas que existen.
+
+        Los perros que parecen ovejas poseen un manto muy característico, con el pelo rizado, abundante y frondoso.
+        Generalmente, los canes que cumplen con este rasgo pierden muy poco pelo o ninguno, por lo que es preciso
+        acudir de forma periódica a la peluquería canina para realizar un adecuado mantenimiento del manto. Si estás
+        pensando en adoptar uno de estos canes por su apariencia dulce y achuchable, pero también por el hecho de no
+        perder pelo, sigue leyendo y descubre en ExpertoAnimal las razas de perros más parecidas a las ovejas.
+      </ion-card-content>
+      <p style="text-align:center; color:rgb(13, 13, 179)"
+        (click)="openUrl('https://www.expertoanimal.com/8-razas-de-perros-que-parecen-ovejas-25770.html', '_self')">
+        Leer más...</p>
+    </ion-card>
+  </div>
 </ion-content>

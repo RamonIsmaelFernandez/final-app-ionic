@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouteReuseStrategy } from '@angular/router';
 import { Geolocation} from '@ionic-native/geolocation/ngx';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 @NgModule({
@@ -22,6 +22,7 @@ import { Geolocation} from '@ionic-native/geolocation/ngx';
   ],
   providers: [
     Camera,
+    InAppBrowser,
     WebView,
     Geolocation,
     {
